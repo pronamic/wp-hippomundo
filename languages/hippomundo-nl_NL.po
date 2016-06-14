@@ -1,0 +1,109 @@
+# Copyright (C) 2016 Pronamic
+# This file is distributed under the GPL.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hippomundo\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hippomundo\n"
+"POT-Creation-Date: 2016-01-18 10:53:39+00:00\n"
+"PO-Revision-Date: 2016-06-14 13:09+0100\n"
+"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
+"Language-Team: Pronamic <info@pronamic.nl>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-admin.php:45
+msgid "Hippomundo Settings"
+msgstr "Hippomundo instellingen"
+
+#. Plugin Name of the plugin/theme
+msgid "Hippomundo"
+msgstr "Hippomundo"
+
+#: includes/class-results-shortcode.php:45
+msgid "Hippomundo Results"
+msgstr "Hippomundo resultaten"
+
+#: includes/class-results-shortcode.php:49 includes/class-settings.php:53
+msgid "API Key"
+msgstr "API Key"
+
+#: includes/class-results-shortcode.php:50
+msgid "Your API token, received from Hippomundo personnel."
+msgstr "Je API-token, ontvangen van Hippomundo personeel."
+
+#: includes/class-results-shortcode.php:58 includes/class-settings.php:65
+msgid "Studbook"
+msgstr "Studbook"
+
+#: includes/class-results-shortcode.php:59
+msgid ""
+"The abbreviated name of your studbook. Your API token will be checked "
+"against for permissions on this studbook."
+msgstr ""
+"De verkorte naam van je stamboek. Je API-token zal worden gecontroleerd "
+"voor toegang tot dit stamboek."
+
+#: includes/class-results-shortcode.php:67 includes/class-settings.php:77
+msgid "Title"
+msgstr "Titel"
+
+#: includes/class-results-shortcode.php:68
+msgid ""
+"Title displayed above the results. Available tags: <code>{days}</code>, "
+"<code>{place}</code>."
+msgstr ""
+"Titel getoond boven de resultaten. Beschikbare tags: <code>{days}</code>, "
+"<code>{place}</code>."
+
+#: includes/class-results-shortcode.php:76 includes/class-settings.php:89
+msgid "Subtitle"
+msgstr "Subtitel"
+
+#: includes/class-results-shortcode.php:77
+msgid ""
+"Subtitle displayed above the results. Available tags: <code>{days}</code>, "
+"<code>{place}</code>."
+msgstr ""
+"Subtitel getoond boven de resultaten. Beschikbare tags: <code>{days}</"
+"code>, <code>{place}</code>."
+
+#: includes/class-results-shortcode.php:85
+msgid "Days"
+msgstr "Dagen"
+
+#: includes/class-results-shortcode.php:86
+msgid "Amount of days of sport results to fetch."
+msgstr "Aantal op te vragen sportresultaten dagen."
+
+#: includes/class-settings.php:43
+msgid "General"
+msgstr "Algemeen"
+
+#: templates/breeder.php:11
+msgid "Breeder:"
+msgstr "Fokker:"
+
+#: templates/editions.php:7
+msgid "No results."
+msgstr "Geen resultaten."
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.pronamic.eu/plugins/hippomundo/"
+msgstr "https://www.pronamic.eu/plugins/hippomundo/"
+
+#. Description of the plugin/theme
+msgid "Integrate Hippomundo results into your WordPress website."
+msgstr "Integreer Hippomundo resultaten in je WordPress website."
+
+#. Author of the plugin/theme
+msgid "Pronamic"
+msgstr "Pronamic"
+
+#. Author URI of the plugin/theme
+msgid "https://www.pronamic.eu/"
+msgstr "https://www.pronamic.eu/"
