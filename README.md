@@ -41,5 +41,8 @@ Default: `10`
 ### discipline
 
 Type: `string`
+
 Default: `all`
+
 Valid options: `all, jumping, dressage, eventing`
+
