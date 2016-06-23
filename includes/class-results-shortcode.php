@@ -91,6 +91,15 @@ class Pronamic_WP_Hippomundo_ResultsShortcode {
 						'min'         => 1,
 					),
 				),
+				array(
+					'label'       => __( 'Discipline', 'hippomundo' ),
+					'description' => __( 'The discipline of the results to fetch (all, jumping, eventing, dressage).', 'hippomundo' ),
+					'attr'        => 'discipline',
+					'type'        => 'text',
+					'meta'        => array(
+						'placeholder' => 'all'
+					),
+				),
 			),
 		) );
 	}
@@ -103,25 +112,28 @@ class Pronamic_WP_Hippomundo_ResultsShortcode {
 	public function render( $atts ) {
 		// Shortcode attributes
 		$atts = shortcode_atts( array(
-			'api_key'  => get_option( 'hippomundo_api_key' ),
-			'studbook' => get_option( 'hippomundo_studbook' ),
-			'title'    => get_option( 'hippomundo_title' ),
-			'subtitle' => get_option( 'hippomundo_subtitle' ),
-			'days'     => 10,
-			'place'    => 10,
+			'api_key'    => get_option( 'hippomundo_api_key' ),
+			'studbook'   => get_option( 'hippomundo_studbook' ),
+			'title'      => get_option( 'hippomundo_title' ),
+			'subtitle'   => get_option( 'hippomundo_subtitle' ),
+			'days'       => 10,
+			'place'      => 10,
+			'discipline' => get_option( 'hippomundo_discipline' ),
 		), $atts, 'hippomundo_results' );
 
-		$this->title    = $atts['title'];
-		$this->subtitle = $atts['subtitle'];
-		$this->days     = $atts['days'];
-		$this->place    = $atts['place'];
+		$this->title      = $atts['title'];
+		$this->subtitle   = $atts['subtitle'];
+		$this->days       = $atts['days'];
+		$this->place      = $atts['place'];
+		$this->discipline = $atts['discipline'];
 
 		// Results
 		$results = $this->plugin->get_results(
 			$atts['api_key'],
 			$atts['studbook'],
 			$this->days,
-			$this->place
+			$this->place,
+			$this->discipline
 		);
 
 		$this->editions = $this->plugin->get_editions_from_competitions( $results );
@@ -144,8 +156,9 @@ class Pronamic_WP_Hippomundo_ResultsShortcode {
 	 */
 	private function format_string( $string ) {
 		$replace = array(
-			'{days}'  => $this->days,
-			'{place}' => $this->place,
+			'{days}'       => $this->days,
+			'{place}'      => $this->place,
+			'{discipline}' => $this->discipline,
 		);
 
 		$string = str_replace(
