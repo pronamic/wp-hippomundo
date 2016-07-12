@@ -36,4 +36,13 @@ Default: `10`
 #### place
 
 Type: `int`  
-Default: `10`  
+Default: `10`
+
+### discipline
+
+Type: `string`
+
+Default: `all`
+
+Valid options: `all, jumping, dressage, eventing`
+

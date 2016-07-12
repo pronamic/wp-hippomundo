@@ -92,6 +92,7 @@ class Pronamic_WP_Hippomundo_Settings {
 			'hippomundo-general',
 			array( 'label_for' => 'hippomundo_subtitle' )
 		);
+
 	}
 
 	/**

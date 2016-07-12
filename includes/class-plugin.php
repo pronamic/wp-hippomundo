@@ -82,6 +82,10 @@ class Pronamic_WP_Hippomundo_Plugin  {
 	public function get_editions_from_competitions( $competitions ) {
 		$editions = array();
 
+		if ( !is_array($competitions) || empty($competitions) ) {
+			return [];
+		}
+
 		foreach ( $competitions as $competition ) {
 			foreach ( $competition['editions'] as $edition ) {
 				$edition['competition_name'] = $competition['name'];
@@ -146,15 +150,17 @@ class Pronamic_WP_Hippomundo_Plugin  {
 	 * @param string $studbook
 	 * @param int $days
 	 * @param int $place
-	 * @return arrray
+	 * @param string $discipline
+	 * @return array
 	 */
-	public function get_results( $api_key, $studbook, $days = 10, $place = 10 ) {
+	public function get_results( $api_key, $studbook, $days = 10, $place = 10, $discipline = 'all' ) {
 		$url = sprintf(
-			'http://www.hippomundo.com/webservice/api_results_tools/studbook/name/%s/apikey/%s/days/%s/place/%s',
+			'http://www.hippomundo.com/webservice/api_results_tools/studbook/name/%s/apikey/%s/days/%s/place/%s/discipline/%s',
 			$studbook,
 			$api_key,
 			$days,
-			$place
+			$place,
+			$discipline
 		);
 
 		// Transient
