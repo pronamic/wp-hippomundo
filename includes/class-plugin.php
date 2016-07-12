@@ -82,7 +82,7 @@ class Pronamic_WP_Hippomundo_Plugin  {
 	public function get_editions_from_competitions( $competitions ) {
 		$editions = array();
 
-		if ( !is_array($competitions) || empty($competitions) ) {
+		if ( ! is_array( $competitions ) || empty( $competitions ) ) {
 			return [];
 		}
 

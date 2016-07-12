@@ -97,7 +97,7 @@ class Pronamic_WP_Hippomundo_ResultsShortcode {
 					'attr'        => 'discipline',
 					'type'        => 'text',
 					'meta'        => array(
-						'placeholder' => 'all'
+						'placeholder' => 'all',
 					),
 				),
 			),
