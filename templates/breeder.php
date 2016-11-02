@@ -25,8 +25,8 @@ if ( '0' !== $result['breeder_published'] && ! empty( $result['breeder_website']
 
 	printf(
 		'<a target="_blank" href="%s"><img src="%s" alt="Advertise your link here"></a>',
-		esc_attr( 'http://www.hippomundo.com/nl/fokker-link' ),
-		esc_attr( 'http://www.hippomundo.com/addons/shared_addons/themes/hippomundo/img/info-icon-grey.png' )
+		esc_attr( 'https://www.hippomundo.com/breeder-link' ),
+		esc_attr( 'https://www.hippomundo.com/images/info-icon-grey.png' )
 	);
 }
 
