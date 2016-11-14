@@ -1,7 +1,7 @@
 <!-- HTML code for the LRT -->
 
 <div class="hm-lrt">
-	<div class="hm-powered">Powered by <a href="http://www.hippomundo.com/nl" target="_blank">Hippomundo</a> ©</div>
+	<div class="hm-powered">Powered by <a href="https://www.hippomundo.com" target="_blank">Hippomundo</a> ©</div>
 
 	<?php if ( $this->has_title() ) : ?>
 	
