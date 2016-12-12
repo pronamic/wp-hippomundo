@@ -2,19 +2,7 @@
 
 $output = '';
 
-$keys = array(
-	'a_fout'   => '',
-	'a_tijd'   => '',
-	'b_fout'   => '',
-	'b_tijd'   => '',
-	'one_fout' => '',
-	'one_tijd' => '',
-);
-
-$values = array_intersect_key( $result, $keys );
-$values = array_diff( $values, array( '' ) );
-
-$string = implode( '/', $values );
+$string = $this->plugin->formatScore($result);
 
 echo esc_html( $string );
 
