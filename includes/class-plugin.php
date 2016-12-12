@@ -144,6 +144,78 @@ class Pronamic_WP_Hippomundo_Plugin  {
 	}
 
 	/**
+	 * Format the score of a specific result, dependent on discipline
+	 *
+	 * @param array $result the given result
+	 * @param string $discipline the discipline of the result
+	 * @return string
+	 */
+	public function formatScore($result, $discipline = null)
+	{
+		if ($discipline === null) {
+			if (isset($result['discipline_name']) && in_array($result['discipline_name'], ['jumping', 'dressage', 'eventing']) ) {
+				$discipline = $result['discipline_name'];
+			} else {
+				return '';
+			}
+		}
+
+		if (is_array($result)) {
+			$result = (object) $result;
+		}
+
+		if ($discipline === 'jumping') {
+			$scores = array();
+			if (isset($result->a_fault) && ($result->a_fault || $result->a_fault==='0') && $result->a_fault !== '0.00') {
+				$scores[] = $result->a_fault;
+			} elseif (isset($result->a_fout) && ($result->a_fout || $result->a_fout==='0') && $result->a_fout !== '0.00') {
+				$scores[] = $result->a_fout;
+			}
+			if (isset($result->a_time) && ($result->a_time || $result->a_time==='0') && $result->a_time !== '0.00') {
+				$scores[] = $result->a_time;
+			} elseif (isset($result->a_tijd) && ($result->a_tijd || $result->a_tijd==='0') && $result->a_tijd !== '0.00') {
+				$scores[] = $result->a_tijd;
+			}
+			if (isset($result->b_fault) && ($result->b_fault || $result->b_fault==='0') && $result->b_fault !== '0.00') {
+				$scores[] = $result->b_fault;
+			} elseif (isset($result->b_fout) && ($result->b_fout || $result->b_fout==='0') && $result->b_fout !== '0.00') {
+				$scores[] = $result->b_fout;
+			}
+			if (isset($result->b_time) && ($result->b_time || $result->b_time==='0') && $result->b_time !== '0.00') {
+				$scores[] = $result->b_time;
+			} elseif (isset($result->b_tijd) && ($result->b_tijd || $result->b_tijd==='0') && $result->b_tijd !== '0.00') {
+				$scores[] = $result->b_tijd;
+			}
+			if (isset($result->one_fault) && ($result->one_fault || $result->one_fault==='0') && $result->one_fault !== '0.00') {
+				$scores[] = $result->one_fault;
+			} elseif (isset($result->one_fout) && ($result->one_fout || $result->one_fout==='0') && $result->one_fout !== '0.00') {
+				$scores[] = $result->one_fout;
+			}
+			if (isset($result->one_time) && ($result->one_time || $result->one_time==='0') && $result->one_time !== '0.00') {
+				$scores[] = $result->one_time;
+			} elseif (isset($result->one_tijd) && ($result->one_tijd || $result->one_tijd==='0') && $result->one_tijd !== '0.00') {
+				$scores[] = $result->one_tijd;
+			}
+			$formatted_score = join('/', $scores);
+		} elseif ($discipline === 'dressage') {
+			if (property_exists($result, 'percentage')) {
+				$formatted_score = !is_numeric($result->percentage)
+					? $result->percentage
+					: (float)$result->percentage.(is_numeric($result->percentage) ?
+						" %"
+						: ""
+					);
+			}
+		} elseif ($discipline === 'eventing') {
+			if(property_exists($result, "total")  && ($result->total || $result->total === '0') && $result->total != '0.00') {
+				$formatted_score = $result->total;
+			}
+		}
+
+		return isset($formatted_score) ? $formatted_score : '';
+	}
+
+	/**
 	 * Get the Hippomundo results.
 	 *
 	 * @param string $api_key
