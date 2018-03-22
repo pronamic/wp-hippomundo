@@ -79,6 +79,10 @@ msgstr ""
 msgid "Breeder:"
 msgstr ""
 
+#: templates/breeder.php:11
+msgid "Breeder info"
+msgstr ""
+
 #: templates/editions.php:7
 msgid "No results."
 msgstr ""
