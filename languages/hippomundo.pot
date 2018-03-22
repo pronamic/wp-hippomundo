@@ -75,8 +75,12 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: templates/breeder.php:11
+#: templates/breeder.php:13
 msgid "Breeder:"
+msgstr ""
+
+#: templates/breeder.php:49
+msgid "Breeder info"
 msgstr ""
 
 #: templates/editions.php:7

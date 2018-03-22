@@ -84,9 +84,13 @@ msgstr "Aantal op te vragen sportresultaten dagen."
 msgid "General"
 msgstr "Algemeen"
 
-#: templates/breeder.php:11
+#: templates/breeder.php:13
 msgid "Breeder:"
 msgstr "Fokker:"
+
+#: templates/breeder.php:49
+msgid "Breeder info"
+msgstr "Fokker info"
 
 #: templates/editions.php:7
 msgid "No results."
